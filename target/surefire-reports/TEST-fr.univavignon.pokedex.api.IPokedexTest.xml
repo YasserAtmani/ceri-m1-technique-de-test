@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="5" failures="0" name="fr.univavignon.pokedex.api.IPokedexTest" time="0.005" errors="0" skipped="0">
+  <properties>
+    <property name="idea.version" value="2020.2.3"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="15.0.2+7-27"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15.0.2\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\yass1\Desktop\M1-info\Design Pattern Avance\ceri-m1-technique-de-test"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\yass1\Desktop\M1-info\Design Pattern Avance\ceri-m1-technique-de-test"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="15.0.2+7-27"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\yass1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-15.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\program files\nvidia gpu computing toolkit\cuda\v11.4\bin;c:\program files\nvidia gpu computing toolkit\cuda\v11.4\libnvvp;c:\program files (x86)\common files\intel\shared libraries\redist\intel64_win\compiler;c:\python39\scripts\;c:\python39\;C:\Users\yass1\.jdks\openjdk-18;c:\program files (x86)\common files\intel\shared libraries\redist\intel64_win\compiler;c:\program files (x86)\common files\intel\shared libraries\redist\intel64\compiler;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0;c:\program files (x86)\skype\phone;c:\users\yass1\appdata\local\microsoft\windowsapps;c:\adb;c:\windows\system32\openssh;c:\android;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0;c:\windows\system32\openssh;C:\Users\yass1\.jdks\openjdk-18\bin;c:\program files\amd\storemi\ecmd;d:\xampp\php;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files\git\cmd;c:\gradle\gradle-6.8\bin;c:\programdata\chocolatey\bin;c:\program files\nodejs\;c:\program files\openjdk\openjdk-8u292-b10\bin;c:\program files\putty\;c:\program files\nvidia corporation\nsight compute 2021.2.2\;c:\program files (x86)\microsoft visual studio\2019\community\vc\tools\msvc\14.29.30133\bin\hostx64\x64;c:\program files\nvidia corporation\nvidia nvdlisr;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Server 8.0\bin;;C:\Program Files\ZeroC\Ice-3.7.7\bin;C:\Users\yass1\AppData\Local\Microsoft\WindowsApps;D:\MinGW\bin;C:\Flutter\flutter\bin;C:\Program Files (x86)\Java;C:\Users\yass1\AppData\Local\Android\Sdk\platform-tools;C:\Users\yass1\AppData\Roaming\npm;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe;C:\Users\yass1\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\Nmap;."/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="59.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\yass1"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="15"/>
+    <property name="user.name" value="yass1"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.2.3 test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-15.0.2"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="15.0.2"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2021-01-19"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getSizeTest" time="0"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonsTest" time="0"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonsSortedTest" time="0"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonTest" time="0.005"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="addPokemonTest" time="0"/>
+</testsuite>
