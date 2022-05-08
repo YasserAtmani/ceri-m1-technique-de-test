@@ -52,5 +52,8 @@ public class IPokemonTrainerFactoryTest {
 
         //Test de la taille du pokedex
         Assert.assertEquals(pokedex.size(), trainerFactory.createTrainer("Sacha", Team.MYSTIC, factory).getPokedex().size());
+
+        //Test createTrainer de la classe PokemonTrainer
+        Assert.assertEquals(Team.MYSTIC, new PokemonTrainerImpl().createTrainer("Sacha", Team.MYSTIC, factory).getTeam());
     }
 }

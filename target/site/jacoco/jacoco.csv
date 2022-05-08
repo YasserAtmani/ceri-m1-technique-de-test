@@ -7,7 +7,7 @@ ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonTrainerFactoryImpl,
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonMetadata,0,33,0,0,0,12,0,6,0,6
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonFactoryImpl,0,34,0,2,0,6,0,3,0,2
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonTrainer,0,21,0,0,0,8,0,4,0,4
-ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonTrainerImpl,10,0,0,0,2,0,2,0,2,0
+ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonTrainerImpl,0,10,0,0,0,2,0,2,0,2
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonMetadataProviderImpl,0,58,0,2,0,9,0,5,0,4
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonComparators,0,41,0,0,0,8,0,3,0,3
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,Pokemon,0,38,0,0,0,12,0,6,0,6
