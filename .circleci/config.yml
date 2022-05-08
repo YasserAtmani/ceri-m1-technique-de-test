@@ -60,10 +60,8 @@ jobs :
     steps:
       - checkout
       - attach_workspace:
-          at: docs/_build
-      - run:
-          name: Disable jekyll builds
-          command: touch docs/_build/html/.nojekyll
+          at: docs
+
       - run:
           name: Install and configure dependencies
           command: |
@@ -75,7 +73,7 @@ jobs :
             - "06:cc:c8:a0:07:50:72:de:df:64:ab:63:24:34:0b:e3"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs/_build/html
+          command: gh-pages --dist docs
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
