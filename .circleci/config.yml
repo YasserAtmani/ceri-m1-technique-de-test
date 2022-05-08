@@ -31,61 +31,55 @@ jobs :
       - codecov/upload:
           file: /target/site/jacoco/jacoco.xml
 
-      docs:
-        docker:
-          - image: cimg/base:2021.04
-        steps:
-          # Checkout the code as the first step.
-          - checkout
-          # Use mvn clean and package as the standard maven build phase
-          - run:
-              name: install1
-              command: sudo add-apt-repository ppa:openjdk-r/ppa
-          - run:
-              name: install2
-              command: sudo apt-get update
-          - run:
-              name: install3
-              command: sudo apt-get install openjdk-11-jdk-headless -y
-          - run:
-              name: Build-docs
-              command: javadoc src/main/java/fr/univavignon/pokedex/api/* -d docs
-          - persist_to_workspace:
-              root: .
-              paths: docs
 
-        docs-deploy:
-          docker:
-            - image: node:8.10.0
-          steps:
-            - checkout
-            - attach_workspace:
-                at: docs
+  docs:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      # Checkout the code as the first step.
+      - checkout
+      # Use mvn clean and package as the standard maven build phase
+      - run:
+          name: install1
+          command: sudo add-apt-repository ppa:openjdk-r/ppa
+      - run:
+          name: install2
+          command: sudo apt-get update
+      - run:
+          name: install3
+          command: sudo apt-get install openjdk-11-jdk-headless -y
+      - run:
+          name: Build-docs
+          command: javadoc src/main/java/fr/univavignon/pokedex/api/* -d docs #/src\main\java\fr\univavignon\pokedex\api
+      - persist_to_workspace:
+          root: .
+          paths: docs
 
-            - run:
-                name: Install and configure dependencies
-                command: |
-                  npm install -g --silent gh-pages@2.0.1
-                  git config user.email "ci-build@klukas.net"
-                  git config user.name "ci-build"
-            - add_ssh_keys:
-                fingerprints:
-                  - "9c:ea:1d:4a:be:87:f8:c4:88:1f:b1:50:6d:1f:b3:1a"
-            - run:
-                name: Deploy docs to gh-pages branch
-                command: gh-pages --dist docs
+  docs-deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: docs
 
-build-deploy:
-  jobs:
-    - build :
-        filters:
-          branches:
-            only : main
-
-
-
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "ci-build@klukas.net"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "9c:ea:1d:4a:be:87:f8:c4:88:1f:b1:50:6d:1f:b3:1a"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dist docs
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  build :
+  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+    # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test:
           filters:
@@ -104,6 +98,13 @@ workflows:
           filters:
             branches:
               only: master
+
+build-deploy:
+  jobs:
+    - build :
+        filters:
+          branches:
+            only : main
 
   maven_test:
     jobs:
