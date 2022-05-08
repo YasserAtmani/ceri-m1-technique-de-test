@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/YasserAtmani/ceri-m1-technique-de-test/branch/master/graph/badge.svg?token=1M4UOO0P5E)](https://codecov.io/gh/YasserAtmani/ceri-m1-technique-de-test)
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction

@@ -61,7 +61,7 @@
   </properties>
   <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getSizeTest" time="0"/>
   <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonsTest" time="0"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonsSortedTest" time="0.002"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonsSortedTest" time="0.001"/>
   <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="getPokemonTest" time="0.006"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="addPokemonTest" time="0"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="addPokemonTest" time="0.001"/>
 </testsuite>
