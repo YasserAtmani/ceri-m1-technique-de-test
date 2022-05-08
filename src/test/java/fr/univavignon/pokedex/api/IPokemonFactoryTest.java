@@ -24,7 +24,7 @@ public class IPokemonFactoryTest {
     }
 
     @Test
-    public void createPokemonTest() {
+    public void createPokemonTest() throws PokedexException {
         //Création d'un Aquali si ces arguments sont rentrés
         Mockito.when(pokemonFactory.createPokemon(133,2729, 202, 5000, 4)).thenReturn(aquali);
         //Création d'un Bulbizarre si ces arguments sont rentrés
