@@ -31,7 +31,6 @@ jobs :
       - codecov/upload:
           file: /target/site/jacoco/jacoco.xml
 
-
   docs:
     docker:
       - image: cimg/base:2021.04
