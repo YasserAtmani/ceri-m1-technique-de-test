@@ -34,6 +34,18 @@ public class IPokemonFactoryTest {
         Assert.assertEquals(aquali, pokemonFactory.createPokemon(133,2729, 202, 5000, 4));
         Assert.assertEquals(bulbizarre, pokemonFactory.createPokemon(0, 613, 64, 4000, 4));
 
+        Assert.assertEquals(aquali.getHp(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getHp());
+        Assert.assertEquals(bulbizarre.getHp(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getHp());
+
+        Assert.assertEquals(aquali.getDust(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getDust());
+        Assert.assertEquals(bulbizarre.getDust(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getDust());
+
+        Assert.assertEquals(aquali.getCandy(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getCandy());
+        Assert.assertEquals(bulbizarre.getCandy(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getCandy());
+
+        Assert.assertEquals(aquali.getIv(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getIv(), 0.0);
+        Assert.assertEquals(bulbizarre.getIv(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getIv(), 0.0);
+
     }
 
 }
