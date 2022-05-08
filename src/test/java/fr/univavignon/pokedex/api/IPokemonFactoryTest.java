@@ -15,9 +15,17 @@ public class IPokemonFactoryTest {
 
 
     @Before
-    public void init() {
+    /*public void init() {
         //La classe à mocker
         pokemonFactory = Mockito.mock(IPokemonFactory.class);
+        // On init les pokemons références
+        aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
+        bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+    }*/
+
+    public void init() {
+        //La classe à mocker
+        pokemonFactory = new PokemonFactoryImpl();
         // On init les pokemons références
         aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
         bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
@@ -26,13 +34,13 @@ public class IPokemonFactoryTest {
     @Test
     public void createPokemonTest() throws PokedexException {
         //Création d'un Aquali si ces arguments sont rentrés
-        Mockito.when(pokemonFactory.createPokemon(133,2729, 202, 5000, 4)).thenReturn(aquali);
+        //Mockito.when(pokemonFactory.createPokemon(133,2729, 202, 5000, 4)).thenReturn(aquali);
         //Création d'un Bulbizarre si ces arguments sont rentrés
-        Mockito.when(pokemonFactory.createPokemon(0, 613, 64, 4000, 4)).thenReturn(bulbizarre);
+        //Mockito.when(pokemonFactory.createPokemon(0, 613, 64, 4000, 4)).thenReturn(bulbizarre);
 
         //Vérification de la correspondance entre les pokémons attendus et pokémons créés
-        Assert.assertEquals(aquali, pokemonFactory.createPokemon(133,2729, 202, 5000, 4));
-        Assert.assertEquals(bulbizarre, pokemonFactory.createPokemon(0, 613, 64, 4000, 4));
+        //Assert.assertEquals(aquali, pokemonFactory.createPokemon(133,2729, 202, 5000, 4));
+        //Assert.assertEquals(bulbizarre, pokemonFactory.createPokemon(0, 613, 64, 4000, 4));
 
         Assert.assertEquals(aquali.getHp(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getHp());
         Assert.assertEquals(bulbizarre.getHp(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getHp());

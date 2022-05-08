@@ -19,7 +19,7 @@ public class IPokedexTest {
 
 
     @Before
-    public void init() {
+    /*public void init() {
         //La classe à mocker
         pokedex = Mockito.mock(IPokedex.class);
 
@@ -28,28 +28,38 @@ public class IPokedexTest {
         bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 
         listPokemons = new ArrayList(Arrays.asList(aquali, bulbizarre));
+    }*/
+    public void init() {
+        //La classe à mocker
+        pokedex = new PokedexImpl(new PokemonMetadataProviderImpl(), new PokemonFactoryImpl());
+
+        //Création de la liste de pokemon référence
+        aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
+        bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+
+        listPokemons = pokedex.getPokemons();
     }
 
     @Test
     public void getSizeTest(){
-        Mockito.doReturn(listPokemons.size()).when(pokedex).size();
+        //Mockito.doReturn(listPokemons.size()).when(pokedex).size();
         Assert.assertEquals(2, pokedex.size());
     }
 
     @Test
     public void addPokemonTest(){
-        Mockito.doReturn(listPokemons.size() + 1).when(pokedex).addPokemon(Mockito.any(Pokemon.class));
+        //Mockito.doReturn(listPokemons.size() + 1).when(pokedex).addPokemon(Mockito.any(Pokemon.class));
         Assert.assertEquals(3, pokedex.addPokemon(new Pokemon(0, "poke1",0,0,0,0,0,0,0,0)));
     }
 
     @Test
     public void getPokemonTest () throws PokedexException {
-        Mockito.doReturn(bulbizarre).when(pokedex).getPokemon(0);
-        Mockito.doReturn(aquali).when(pokedex).getPokemon(1);
-        Mockito.doThrow(new PokedexException("Erreur : pas dans la liste")).when(pokedex).getPokemon(Mockito.intThat(i -> i < 0 || i > 1));
+        //Mockito.doReturn(bulbizarre).when(pokedex).getPokemon(0);
+        //Mockito.doReturn(aquali).when(pokedex).getPokemon(1);
+        //Mockito.doThrow(new PokedexException("Erreur : pas dans la liste")).when(pokedex).getPokemon(Mockito.intThat(i -> i < 0 || i > 1));
 
-        Assert.assertEquals(bulbizarre, pokedex.getPokemon(0));
-        Assert.assertEquals(aquali, pokedex.getPokemon(1));
+        Assert.assertEquals(aquali.getName(), pokedex.getPokemon(0).getName());
+        Assert.assertEquals(bulbizarre.getName(), pokedex.getPokemon(1).getName());
 
         Assert.assertThrows(PokedexException.class, () -> pokedex.getPokemon(-99));
         Assert.assertThrows(PokedexException.class, () -> pokedex.getPokemon(-1));
@@ -61,7 +71,7 @@ public class IPokedexTest {
     public void getPokemonsTest () {
         List<Pokemon> unmodifiablePokemonList = Collections.unmodifiableList(listPokemons);
 
-        Mockito.doReturn(unmodifiablePokemonList).when(pokedex).getPokemons();
+        //Mockito.doReturn(unmodifiablePokemonList).when(pokedex).getPokemons();
 
         Assert.assertEquals(unmodifiablePokemonList.getClass(), pokedex.getPokemons().getClass());
         Assert.assertEquals(listPokemons.size(), pokedex.getPokemons().size());
@@ -87,9 +97,9 @@ public class IPokedexTest {
         pokemonsSortedByCP.sort(cp);
 
         //Appel de la methode getPokemons prenant en argument le comparator
-        Mockito.doReturn(Collections.unmodifiableList(pokemonsSortedByName)).when(pokedex).getPokemons(name);
-        Mockito.doReturn(Collections.unmodifiableList(pokemonsSortedByIndex)).when(pokedex).getPokemons(index);
-        Mockito.doReturn(Collections.unmodifiableList(pokemonsSortedByIndex)).when(pokedex).getPokemons(cp);
+        //Mockito.doReturn(Collections.unmodifiableList(pokemonsSortedByName)).when(pokedex).getPokemons(name);
+        //Mockito.doReturn(Collections.unmodifiableList(pokemonsSortedByIndex)).when(pokedex).getPokemons(index);
+        //Mockito.doReturn(Collections.unmodifiableList(pokemonsSortedByIndex)).when(pokedex).getPokemons(cp);
 
 
         //Nom du premier pokemon attendu = Aquali

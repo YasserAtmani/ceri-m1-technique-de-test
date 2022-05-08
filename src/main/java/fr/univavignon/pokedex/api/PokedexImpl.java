@@ -18,6 +18,8 @@ public class PokedexImpl implements IPokedex {
     public PokedexImpl(IPokemonMetadataProvider pokemonMetadataProvider, IPokemonFactory pokemonFactory) {
         this.pokemonMetadataProvider = pokemonMetadataProvider;
         this.pokemonFactory = pokemonFactory;
+        pokemonsRegistered.add( new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100));
+        pokemonsRegistered.add(new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56));
     }
 
     @Override

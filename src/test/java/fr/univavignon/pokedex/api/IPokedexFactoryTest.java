@@ -12,14 +12,22 @@ public class IPokedexFactoryTest {
     PokemonMetadata bulbizarre;
 
     @Before
-    public void init() {
+    /*public void init() {
         //La classe à mocker
         pokedexFactory = Mockito.mock(IPokedexFactory.class);
 
         //Pokemons de reference
         aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
         bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+    }*/
 
+    public void init() {
+        //La classe à mocker
+        pokedexFactory = new PokedexFactoryImpl();
+
+        //Pokemons de reference
+        aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
+        bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
     }
 
     @Test
@@ -27,10 +35,10 @@ public class IPokedexFactoryTest {
         IPokemonMetadataProvider pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
         IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
         //Accepte n'importe quelle instance de PokemonMetadataProvider ou PokemonFactory
-        Mockito.doReturn(Mockito.mock(IPokedex.class)).when(pokedexFactory).createPokedex(Mockito.any(pokemonMetadataProvider.getClass()), Mockito.any(pokemonFactory.getClass()));
+        //Mockito.doReturn(Mockito.mock(IPokedex.class)).when(pokedexFactory).createPokedex(Mockito.any(pokemonMetadataProvider.getClass()), Mockito.any(pokemonFactory.getClass()));
         //Vérificaton sur un retour non null
         Assert.assertNotNull(pokedexFactory.createPokedex(Mockito.mock(IPokemonMetadataProvider.class), Mockito.mock(IPokemonFactory.class)));
         //Instance de IPokedex attendue
-        Assert.assertEquals(Mockito.mock(IPokedex.class).getClass(), pokedexFactory.createPokedex(Mockito.mock(IPokemonMetadataProvider.class), Mockito.mock(IPokemonFactory.class)).getClass());
+        Assert.assertEquals(PokedexImpl.class, pokedexFactory.createPokedex(pokemonMetadataProvider, pokemonFactory).getClass());
     }
 }
