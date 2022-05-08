@@ -40,10 +40,8 @@ public class IPokemonTrainerFactoryTest {
         //Team MYSTIC attendue
         Assert.assertEquals(Team.MYSTIC, trainerFactory.createTrainer("Sacha", Team.MYSTIC, factory).getTeam());
 
-
         //Test du pokedex
         Assert.assertEquals(pokedex, trainerFactory.createTrainer("Sacha", Team.MYSTIC, factory).getPokedex());
-
 
         //Test de la taille du pokedex
         Assert.assertEquals(pokedex.size(), trainerFactory.createTrainer("Sacha", Team.MYSTIC, factory).getPokedex().size());
