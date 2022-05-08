@@ -13,8 +13,8 @@ import java.util.List;
 public class IPokedexTest {
 
     IPokedex pokedex;
-    PokemonMetadata aquali;
-    PokemonMetadata bulbizarre;
+    Pokemon aquali;
+    Pokemon bulbizarre;
     List<Pokemon> listPokemons;
 
 
@@ -112,6 +112,18 @@ public class IPokedexTest {
         Assert.assertEquals(Collections.unmodifiableList(new ArrayList<>()).getClass(), pokedex.getPokemons(name).getClass());
         //Taille attendu = meme taille qu'initialement
         Assert.assertEquals(listPokemons.size(), pokedex.getPokemons(name).size());
+    }
+
+    @Test
+    public void getPokemonMetadataTest() throws PokedexException {
+        Assert.assertEquals(186, pokedex.getPokemonMetadata(133).getAttack());
+        Assert.assertEquals("Bulbizarre", pokedex.getPokemonMetadata(0).getName());
+    }
+
+    @Test
+    public void createPokemonTest() throws PokedexException {
+        Assert.assertEquals(186, pokedex.createPokemon(133, 2729, 202, 5000, 4).getAttack());
+        Assert.assertEquals("Bulbizarre", pokedex.createPokemon(0, 613, 64, 4000, 4).getName());
     }
 
 }

@@ -2,7 +2,7 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokedexFactoryImpl,0,9,0,0,0,2,0,2,0,2
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,Team,0,21,0,0,0,4,0,1,0,1
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokedexException,0,4,0,0,0,2,0,1,0,1
-ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokedexImpl,14,95,0,0,2,20,2,6,2,6
+ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokedexImpl,0,109,0,0,0,22,0,8,0,8
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonTrainerFactoryImpl,0,21,0,0,0,5,0,2,0,2
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonMetadata,0,33,0,0,0,12,0,6,0,6
 ceri-m1-techniques-de-test,fr.univavignon.pokedex.api,PokemonFactoryImpl,0,34,0,2,0,6,0,3,0,2
