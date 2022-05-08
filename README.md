@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/YasserAtmani/ceri-m1-technique-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/YasserAtmani/ceri-m1-technique-de-test/tree/master)
 [![codecov](https://codecov.io/gh/YasserAtmani/ceri-m1-technique-de-test/branch/master/graph/badge.svg?token=1M4UOO0P5E)](https://codecov.io/gh/YasserAtmani/ceri-m1-technique-de-test)
 
 # UCE Génie Logiciel Avancé : Techniques de tests
