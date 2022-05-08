@@ -30,8 +30,14 @@ public class IPokemonMetadataProviderTest {
         Mockito.doReturn(aquali).when(provider).getPokemonMetadata(133);
         Mockito.doReturn(bulbizarre).when(provider).getPokemonMetadata(0);
 
-        Assert.assertEquals(bulbizarre, provider.getPokemonMetadata(0));
-        Assert.assertEquals(aquali, provider.getPokemonMetadata(133));
+        Assert.assertEquals(bulbizarre.getAttack(), provider.getPokemonMetadata(0).getAttack());
+        Assert.assertEquals(aquali.getAttack(), provider.getPokemonMetadata(133).getAttack());
+
+        Assert.assertEquals(bulbizarre.getDefense(), provider.getPokemonMetadata(0).getDefense());
+        Assert.assertEquals(aquali.getDefense(), provider.getPokemonMetadata(133).getDefense());
+
+        Assert.assertEquals(bulbizarre.getStamina(), provider.getPokemonMetadata(0).getStamina());
+        Assert.assertEquals(aquali.getStamina(), provider.getPokemonMetadata(133).getStamina());
 
         //Exception attendue si l'index est inférieur à 0 ou supérieur à 150
         Mockito.doThrow(new PokedexException("Erreur : l'index du Pokemon doit être entre 0 et 150")).when(provider).getPokemonMetadata(Mockito.intThat(i -> i < 0 || i > 150));
