@@ -45,7 +45,5 @@ public class IPokemonFactoryTest {
 
         Assert.assertEquals(aquali.getIv(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getIv(), 0.0);
         Assert.assertEquals(bulbizarre.getIv(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getIv(), 0.0);
-
     }
-
 }
