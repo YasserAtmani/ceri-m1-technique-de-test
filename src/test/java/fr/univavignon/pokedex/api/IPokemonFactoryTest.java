@@ -8,7 +8,7 @@ import org.mockito.Mockito;
 public class IPokemonFactoryTest {
     //Classe testée
     IPokemonFactory pokemonFactory;
-    IPokemonFactory rocketPokemonFactory;
+    //IPokemonFactory rocketPokemonFactory;
 
     //Pokemons références
     Pokemon bulbizarre;
@@ -27,7 +27,7 @@ public class IPokemonFactoryTest {
     public void init() {
         //La classe à mocker
         pokemonFactory = new PokemonFactoryImpl();
-        rocketPokemonFactory = new RocketPokemonFactory();
+        //rocketPokemonFactory = new RocketPokemonFactory();
         // On init les pokemons références
         aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
         bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
