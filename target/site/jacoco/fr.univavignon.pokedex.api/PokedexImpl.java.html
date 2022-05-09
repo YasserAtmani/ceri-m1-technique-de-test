@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PokedexImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ceri-m1-techniques-de-test</a> &gt; <a href="index.source.html" class="el_package">fr.univavignon.pokedex.api</a> &gt; <span class="el_source">PokedexImpl.java</span></div><h1>PokedexImpl.java</h1><pre class="source lang-java linenums">package fr.univavignon.pokedex.api;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class PokedexImpl implements IPokedex {
+
+    IPokemonMetadataProvider pokemonMetadataProvider;
+    IPokemonFactory pokemonFactory;
+
+    /**
+     * Liste des Pokemons enregistres dans le Pokedex
+     */
+<span class="fc" id="L16">    private List&lt;Pokemon&gt; pokemonsRegistered = new ArrayList&lt;&gt;();</span>
+
+<span class="fc" id="L18">    public PokedexImpl(IPokemonMetadataProvider pokemonMetadataProvider, IPokemonFactory pokemonFactory) {</span>
+<span class="fc" id="L19">        this.pokemonMetadataProvider = pokemonMetadataProvider;</span>
+<span class="fc" id="L20">        this.pokemonFactory = pokemonFactory;</span>
+<span class="fc" id="L21">        pokemonsRegistered.add( new Pokemon(133, &quot;Aquali&quot;, 186, 186, 260, 2729, 202, 5000, 4, 100));</span>
+<span class="fc" id="L22">        pokemonsRegistered.add(new Pokemon(0, &quot;Bulbizarre&quot;, 126, 126, 90, 613, 64, 4000, 4, 56));</span>
+<span class="fc" id="L23">    }</span>
+
+    @Override
+    public int size() {
+<span class="fc" id="L27">        return pokemonsRegistered.size();</span>
+    }
+
+    @Override
+    public int addPokemon(Pokemon pokemon) {
+<span class="fc" id="L32">        pokemonsRegistered.add(pokemon);</span>
+<span class="fc" id="L33">        return pokemonsRegistered.size();</span>
+    }
+
+    @Override
+    public Pokemon getPokemon(int id) throws PokedexException {
+        try {
+<span class="fc" id="L39">            Pokemon pokemon = pokemonsRegistered.get(id);</span>
+<span class="fc" id="L40">            return pokemon;</span>
+<span class="fc" id="L41">        } catch (IndexOutOfBoundsException e) {</span>
+<span class="fc" id="L42">            throw new PokedexException(&quot;Erreur : pas dans la liste&quot;);</span>
+        }
+    }
+
+    @Override
+    public List&lt;Pokemon&gt; getPokemons() {
+<span class="fc" id="L48">        List&lt;Pokemon&gt; unmodifiableSortedPokemonList = Collections.unmodifiableList(pokemonsRegistered);</span>
+<span class="fc" id="L49">        return unmodifiableSortedPokemonList;</span>
+    }
+
+    @Override
+    public List&lt;Pokemon&gt; getPokemons(Comparator&lt;Pokemon&gt; order) {
+<span class="fc" id="L54">        List sorted = new ArrayList(pokemonsRegistered);</span>
+<span class="fc" id="L55">        sorted.sort(order);</span>
+<span class="fc" id="L56">        List&lt;Pokemon&gt; unmodifiableSortedPokemonList = Collections.unmodifiableList(sorted);</span>
+<span class="fc" id="L57">        return unmodifiableSortedPokemonList;</span>
+    }
+
+    @Override
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
+<span class="fc" id="L62">        return pokemonFactory.createPokemon(index, cp, hp, dust, candy);</span>
+    }
+
+    @Override
+    public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
+<span class="fc" id="L67">        return pokemonMetadataProvider.getPokemonMetadata(index);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
