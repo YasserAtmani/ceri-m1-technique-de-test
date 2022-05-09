@@ -8,6 +8,7 @@ import org.mockito.Mockito;
 public class IPokemonFactoryTest {
     //Classe testée
     IPokemonFactory pokemonFactory;
+    IPokemonFactory rocketPokemonFactory;
 
     //Pokemons références
     Pokemon bulbizarre;
@@ -26,6 +27,7 @@ public class IPokemonFactoryTest {
     public void init() {
         //La classe à mocker
         pokemonFactory = new PokemonFactoryImpl();
+        rocketPokemonFactory = new RocketPokemonFactory();
         // On init les pokemons références
         aquali = new Pokemon(133, "Aquali", 186, 186, 260, 2729, 202, 5000, 4, 100);
         bulbizarre =  new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
@@ -53,5 +55,22 @@ public class IPokemonFactoryTest {
 
         Assert.assertEquals(aquali.getIv(), pokemonFactory.createPokemon(133,2729, 202, 5000, 4).getIv(), 0.0);
         Assert.assertEquals(bulbizarre.getIv(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getIv(), 0.0);
+    }
+
+    @Test
+    public void rocketCreatePokemonTest() throws PokedexException {
+        /**
+         * Test de l'implémentation de la Team Rocket
+         */
+
+        Assert.assertEquals(aquali.getHp(), rocketPokemonFactory.createPokemon(133,2729, 202, 5000, 4).getHp());
+        Assert.assertEquals(bulbizarre.getHp(), rocketPokemonFactory.createPokemon(0, 613, 64, 4000, 4).getHp());
+
+        Assert.assertEquals(aquali.getIv(), rocketPokemonFactory.createPokemon(133,2729, 202, 5000, 4).getIv(), 0.0);
+        Assert.assertEquals(bulbizarre.getIv(), rocketPokemonFactory.createPokemon(0, 613, 64, 4000, 4).getIv(), 0.0);
+
+        Assert.assertThrows(PokedexException.class, () -> rocketPokemonFactory.createPokemon(159,2729, 202, 5000, 4));
+        Assert.assertThrows(PokedexException.class, () -> rocketPokemonFactory.createPokemon(-82,2729, 202, 5000, 4));
+
     }
 }
