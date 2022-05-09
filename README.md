@@ -10,7 +10,8 @@ ATMANI Yasser, M1 ILSEN Classique Groupe 1
 
 Lien de la javadoc [ici](https://yasseratmani.github.io/ceri-m1-technique-de-test/fr/univavignon/pokedex/api/package-summary.html).
 
-##Rapport RocketPokemonFactory
+## Rapport RocketPokemonFactory
 
+- Checkstyle trouve 21 erreurs
 - Un pokemon peut être crée même si l'index est en dehors de l'ensemble [0,150] , aucune exception n'est levée
 - Les IV récupérés ne sont pas les bons car ils ne sont pas calculés et gérés comme il faudrait à la création
