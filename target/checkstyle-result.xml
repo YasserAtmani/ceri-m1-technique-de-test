@@ -46,8 +46,6 @@
 <error line="18" severity="error" message="La ligne excède 80 caractères (trouvé 93)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="19" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 </file>
-<file name="C:\Users\yass1\Desktop\M1-info\Design Pattern Avance\ceri-m1-technique-de-test\src\main\java\fr\univavignon\pokedex\api\PokedexException.java">
-</file>
 <file name="C:\Users\yass1\Desktop\M1-info\Design Pattern Avance\ceri-m1-technique-de-test\src\main\java\fr\univavignon\pokedex\api\PokedexFactoryImpl.java">
 <error line="4" column="5" severity="error" message="La classe &apos;PokedexFactoryImpl&apos; semble être conçue pour extension (peut être héritée), mais la méthode&apos;createPokedex&apos; n&apos;a pas de Javadoc qui explique comment le faire en toute sécurité. Si la classe n&apos;est pas conçue pour extension, envisagez de rendre la classe &apos;PokedexFactoryImpl&apos; finale ou de rendre la méthode &apos;createPokedex&apos; static/final/abstract/empty, d&apos;ajouter les annotations permises pour la méthode." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
 <error line="5" severity="error" message="La ligne excède 80 caractères (trouvé 110)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>

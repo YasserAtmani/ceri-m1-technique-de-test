@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2022</copyright>
     <item>
-      <title>File: 17,
+      <title>File: 16,
              Errors: 200,
              Warnings: 0,
              Infos: 0
@@ -182,20 +182,6 @@ under the License.
                 </td>
                 <td>
                   13
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fr.univavignon.pokedex.api.PokedexException.java">fr/univavignon/pokedex/api/PokedexException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
                 </td>
               </tr>
                           <tr>
