@@ -57,11 +57,11 @@ public class IPokemonFactoryTest {
         Assert.assertEquals(bulbizarre.getIv(), pokemonFactory.createPokemon(0, 613, 64, 4000, 4).getIv(), 0.0);
     }
 
-    @Test
+    /*@Test
     public void rocketCreatePokemonTest() throws PokedexException {
-        /**
-         * Test de l'implémentation de la Team Rocket
-         */
+
+        // Test de l'implémentation de la Team Rocket
+
 
         Assert.assertEquals(aquali.getHp(), rocketPokemonFactory.createPokemon(133,2729, 202, 5000, 4).getHp());
         Assert.assertEquals(bulbizarre.getHp(), rocketPokemonFactory.createPokemon(0, 613, 64, 4000, 4).getHp());
@@ -72,5 +72,5 @@ public class IPokemonFactoryTest {
         Assert.assertThrows(PokedexException.class, () -> rocketPokemonFactory.createPokemon(159,2729, 202, 5000, 4));
         Assert.assertThrows(PokedexException.class, () -> rocketPokemonFactory.createPokemon(-82,2729, 202, 5000, 4));
 
-    }
+    }*/
 }
